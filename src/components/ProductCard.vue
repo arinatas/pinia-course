@@ -9,6 +9,7 @@ const props = defineProps({
 });
 
 // emits
+// Singkatnya, fungsi $emit di vue adalah cara bagaimana kita mengirim event atau kejadian di komponen anak(child) ke komponen induk(parent).
 defineEmits(["addToCart"])
 
 // data
