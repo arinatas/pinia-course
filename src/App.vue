@@ -14,6 +14,14 @@ const cartStore = useCartStore();
 
 // panggil fungsi fill pada ProductStore.js
 productStore.fill();
+// const addToCart = (count, product) => {
+//   count = parseInt(count);
+//   cartStore.$patch((state) => {
+//     for(let index = 0; index < count; index++){
+//       state.items.push(product)
+//     }
+//   });
+// }
 
 </script>
 
@@ -27,6 +35,7 @@ productStore.fill();
         :product="product"
         @addToCart="cartStore.addItems($event, product)"
       />
+        <!-- @addToCart="addToCart($event, product)" -->
     </ul>
   </div>
 </template>
