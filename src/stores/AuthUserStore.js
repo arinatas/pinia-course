@@ -4,5 +4,10 @@ export const useAuthUserStore = defineStore("AuthUserStore", {
         return {
             username: "arinatas",
         }
+    },
+    actions: {
+        visitTwitterProfile(){
+            window.open(`https://twitter.com/${this.username}`, '_blank');
+        }
     }
 });
