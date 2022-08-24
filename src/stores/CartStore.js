@@ -1,6 +1,6 @@
 import { isEmpty } from "lodash";
 import { groupBy } from "lodash";
-import { defineStore } from "pinia";
+import { defineStore, acceptHMRUpdate } from "pinia";
 import { useAuthUserStore } from "./AuthUserStore";
 
 export const useCartStore = defineStore("CartStore", {
@@ -54,3 +54,8 @@ export const useCartStore = defineStore("CartStore", {
         }
     }
 });
+
+// make sure to pass the right store definition, `useCartStore` in this case. biar ga perlu refresh page pake ini accpetHMRUpdate
+if (import.meta.hot) {
+    import.meta.hot.accept(acceptHMRUpdate(useCartStore, import.meta.hot))
+}
