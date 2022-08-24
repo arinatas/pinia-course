@@ -4,6 +4,7 @@ import { defineStore, acceptHMRUpdate } from "pinia";
 import { useAuthUserStore } from "./AuthUserStore";
 
 export const useCartStore = defineStore("CartStore", {
+    historyEnabled: true,
     state: () => {
         return {
             items:[],
